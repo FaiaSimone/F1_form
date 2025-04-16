@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo Richiesta Assistenza Tecnica - Christeyns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+   <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "nunito", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header img {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .form-row {
+            margin-bottom: 20px;
+        }
+        
+        .form-row label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 5pt 0 #D3D3D3;
+        }
+        
+        .form-control::placeholder {
+            color: #999;
+            font-style:italic;
+        }
+        
+        .divider {
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .checkbox-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .radio-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        
+        .radio-group span {
+            margin-right: 15px;
+            font-weight: 600;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+        
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        td > input{
+            border: none;
+            width: 100%;;
+        }
+        
+        th {
+            background-color: #f9f9f9;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            min-height: 120px;
+            font-size: 16px;
+            background-color: #f5f5f5;
+            resize: vertical;
+        }
+        
+        .form-row-split {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row-split > div {
+            flex: 1;
+        }
+        .form-row-split label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        #subBtn{
+            position: relative;
+            left: 40%;
+            padding: 12px 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 5pt 0 #D3D3D3;
+            
+        }
+        #subBtn:hover{
+            cursor: pointer;
+            box-shadow: 0pt 0 10pt 0 #D3D3D3;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row-split {
+                flex-direction: column;
+            }
+            
+            .checkbox-column {
+                min-width: 100%;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .radio-option {
+                margin: 5px 0 5px 0;
+            }
+        }
+        
+        .logo-color {
+            color: #0050a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./CHR - Corporate - Horizontal.jpg" alt="Christeyns Logo">
+            <h1>Modulo Richiesta Assistenza Tecnica</h1>
+        </div>
+        
+        <form class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbxZ1brkV4yIThnFOlO5S1ZUFfVi3bH9e4ovi9lLvT9IYbYxSnUaUDHn0-X2sqege0qp/exec">
+            <div class="form-elements">
+                <div class="form-row" style="display: flex; justify-content: space-between;">
+                    <div class="half-form-row" style="width: 50%;">
+                        <label for="codice-cliente">Codice Cliente</label>
+                        <input type="text" id="codice-cliente" name="codice-cliente"  class="form-control" required>    
+                    </div>
+                    <div class="half-form-row" style="width: 48%;">
+                        <label for="piva">P.IVA</label>
+                        <input type="text" id="piva" name="piva" class="form-control" required>
+        
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <label for="azienda">Azienda</label>
+                    <input type="text" id="azienda" name="azienda" class="form-control" required>
+                </div>
+                
+                <div class="form-row">
+                    <label for="indirizzo">Indirizzo</label>
+                    <input type="text" id="indirizzo" name="indirizzo" class="form-control" placeholder="Indicare dove effettuare ass.za tecnica / installazione" required>
+                </div>
+                
+                <div class="form-row">
+                    <label for="contatto">Contatto c/o Cliente</label>
+                    <input type="text" id="contatto" name="contatto" class="form-control">
+                </div>
+                
+                <div class="form-row">
+                    <label for="note">Note per Appuntamento</label>
+                    <textarea id="note" name="note" class="form-control"></textarea>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-column">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ass-tecnica" name="ass-tecnica" onclick="this.setAttribute('value', 'true')">
+                            <label for="ass-tecnica">Ass.za Tecnica</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="installazione" name="installazione" onclick="this.setAttribute('value', 'true')">
+                            <label for="installazione">Installazione</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sopralluogo" name="sopralluogo" onclick="this.setAttribute('value', 'true')">
+                            <label for="sopralluogo">Sopralluogo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="controllo" name="controllo" onclick="this.setAttribute('value', 'true')">
+                            <label for="controllo">Controllo Chimico</label>
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-column">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="opc" name="opc" onclick="this.setAttribute('value', 'true')">
+                            <label for="opc">OPC</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cip" name="cip" onclick="this.setAttribute('value', 'true')">
+                            <label for="cip">CIP</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pompe" name="pompe" onclick="this.setAttribute('value', 'true')">
+                            <label for="pompe">Pompe Dosaggio</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="altro" name="altro" onclick="this.setAttribute('value', 'true')">
+                            <label for="altro">Altro</label>
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-column">
+                        <div class="radio-group">
+                            <span>Urgente:</span>
+                            <div class="radio-option">
+                                <input type="radio" id="urgente-si" name="urgente" value="urg_si">
+                                <label for="urgente-si">Sì</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="urgente-no" name="urgente" value="urg_no">
+                                <label for="urgente-no">No</label>
+                            </div>
+                        </div>
+                        
+                        <div class="radio-group">
+                            <span>Periodico:</span>
+                            <div class="radio-option">
+                                <input type="radio" id="periodico-si" name="periodico" value="per_si">
+                                <label for="periodico-si">Sì</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="periodico-no" name="periodico" value="per_no">
+                                <label for="periodico-no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row-split">
+                    <div>
+                        <label for="richiedente">Richiedente</label>
+                        <input type="text" id="richiedente" name="richiedente" class="form-control" required>
+                    </div>
+                    
+                    <div>
+                        <label for="tecnico">Tecnico</label>
+                        <input type="text" id="tecnico" name="tecnico" class="form-control" placeholder="Opzionale, indicare solo se dato certo">
+                    </div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Apparecchiatura</th>
+                                <th>Q.tà</th>
+                                <th>Motivo Richiesta</th>
+                                <th>Altre Info.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input id="app_1" name="app_1"  /></td>
+                                <td><input id="qta_1" name="qta_1"  /></td>
+                                <td><input id="motRic_1" name="motRic_1"  /></td>
+                                <td><input id="altro_1"  name="altro_1" /></td>
+                            </tr>
+                            <tr>
+                                <td><input id="app_2" name="app_2" /></td>
+                                <td><input id="qta_2" name="qta_2"  /></td>
+                                <td><input id="motRic_2" name="motRic_2"  /></td>
+                                <td><input id="altro_2"name="altro_2"  /></td>
+                            </tr>
+                            <tr>
+                                <td><input id="app_3" name="app_3"  /></td>
+                                <td><input id="qta_3" name="qta_3" /></td>
+                                <td><input id="motRic_3" name="motRic_3"  /></td>
+                                <td><input id="altro_3" name="altro_3"  /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="form-row">
+                    <label for="descrizione">Descrizione Intervento per Specifiche</label>
+                    <textarea id="descrizione" name="descrizione" class="form-control"></textarea>
+                </div>
+                <div class="form-row">
+                    <input type="submit" id="subBtn" value="Conferma">
+                </div>
+            </div>
+            <div class="thankyou_message" style="display:none;">
+                <h2 style="text-align: center;"><em>Grazie</em> i tuoi dati sono stati inviati correttamente
+                </h2>
+            </div>
+        </form>
+    </div>
+    <script data-cfasync="false" src="form-submission-handler.js"></script>
+</body>
+</html>
