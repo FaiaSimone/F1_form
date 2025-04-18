@@ -78,6 +78,22 @@
       }
     } else {
       disableAllButtons(form);
+      
+      //Aggiunta una chiamata senza utilizzare XMLHttpRequest ma un fetch
+      //modificare anche Action nel tag form
+
+      // let response = fetch(url, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/x-www-form-urlencoded'
+      //   },
+      //   body: new URLSearchParams(data).toString()
+      // });
+      
+      console.log(`Status: ${response.status} ${response.statusText}`);
+      let responseText = response.text();
+      console.log("Response:", responseText);
+
       var url = form.action;
       var xhr = new XMLHttpRequest();
       xhr.open('POST', url);

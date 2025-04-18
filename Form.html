@@ -225,18 +225,40 @@
         
         <form class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbxZ1brkV4yIThnFOlO5S1ZUFfVi3bH9e4ovi9lLvT9IYbYxSnUaUDHn0-X2sqege0qp/exec">
             <div class="form-elements">
-                <div class="form-row" style="display: flex; justify-content: space-between;">
-                    <div class="half-form-row" style="width: 50%;">
+                <!-- <div class="form-row" style="display: flex; justify-content: space-between;">
+                    
+                </div> -->
+                <div class="form-row-split">
+                    <div class="half-form-row" style="margin-bottom: 2%;">
                         <label for="codice-cliente">Codice Cliente</label>
                         <input type="text" id="codice-cliente" name="codice-cliente"  class="form-control" required>    
                     </div>
-                    <div class="half-form-row" style="width: 48%;">
+                    <div class="half-form-row">
                         <label for="piva">P.IVA</label>
-                        <input type="text" id="piva" name="piva" class="form-control" required>
-        
+                        <input type="text" id="piva" name="piva" class="form-control" maxlength="11" required>
                     </div>
                 </div>
                 
+                <div class="form-row">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" class="form-control" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="cognome">Cognome</label>
+                    <input type="text" id="cognome" name="cognome" class="form-control" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" id="telefono" name="telefono" class="form-control" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
                 <div class="form-row">
                     <label for="azienda">Azienda</label>
                     <input type="text" id="azienda" name="azienda" class="form-control" required>
