@@ -80,15 +80,15 @@
       disableAllButtons(form);
       
       //Aggiunta una chiamata senza utilizzare XMLHttpRequest ma un fetch
-      //modificare anche Action nel tag form
+      //modificare anche Action nel tag
 
-      // let response = fetch(url, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/x-www-form-urlencoded'
-      //   },
-      //   body: new URLSearchParams(data).toString()
-      // });
+      let response = fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(data).toString()
+      });
       
       console.log(`Status: ${response.status} ${response.statusText}`);
       let responseText = response.text();
